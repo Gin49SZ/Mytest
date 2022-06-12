@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>成绩单</title>
+        <link href="/styles.css" rel="stylesheet" />
+    <body>
+        <div class="paper" style="margin-top:6.5em">
+        <span>
+            <div class="btn"><a href="/">主菜单</a>  
+            </div>
+        </span>
+        <table>
+            <tr>
+                <th>班级</th>
+                <th>课程</th>
+            </tr>
+            {% for item in items %}
+                <td>{{ item.student_class }}</td>
+                <td>{{ item.course_name }}</td>
+                <td style="width:3em; height: 3em;">
+                    <span>
+                        <div class="btn">
+                        {% if item.grade == None %}
+                        <form
+                            action="/mycourse/delete/{{item.stu_sn}}/{{item.cou_sn}}"
+                            method="post"
+                        >
+                            <input type="submit" value="删除" />
+                        </form>
+                        {% endif %}
+                        </div>
+                    </span>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    </body>
+</html>

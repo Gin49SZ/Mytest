@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>成绩单</title>
+        <link href="/styles.css" rel="stylesheet" />
+    </head>
+    <body>        
+        <h3> 您好, 
+            {% for i in user %}
+            {{ i.sn }}
+            {% endfor %}
+        </h3>
+    <div class="btn">    
+    <form action="/logout" method="post">
+        <input type="submit" value="登出">
+    </form>
+    </div>
+    <div class="paper">
+
+        <span>
+            <div class="btn"><a href="/choosecourse">选课</a>  
+            </div>
+            <div class="btn"><a href="/mycourse">已选课程</a>  
+            </div>
+        </span>
+        <table>
+            <tr>
+                <th>姓名</th>
+                <th>学号</th>
+                <th>班级</th>
+                <th>课程</th>
+                <th>成绩</th>
+            </tr>
+            {% for item in items %}    
+            <tr>
+                <td>{{ item.student_name }}</td>
+                <td>{{ item.student_no }}</td>
+                <td>{{ item.student_class }}</td>
+                <td>{{ item.course_name }}</td>
+                <td>{{ item.grade }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+    </body>
+</html>

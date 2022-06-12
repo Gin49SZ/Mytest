@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>班级管理</title>
+        <link href="/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="paper" style="margin-top:6.5em">
+        
+        <h3> 
+            班级管理
+        </h3>
+        <span>
+            <div class="btn"><a href="/t">主菜单</a>  
+            </div>
+        </span>
+        <table>
+            <tr>
+                <th>课程</th>
+                <th>课程号</th>
+                <th>课程阶段</th>
+            </tr>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.course_name }}</td>
+                <td>{{ item.course_sn }}</td>
+                <td>{{ item.course_term }}</td>
+                <td>
+                        <span>
+                            <div class="btn"><a href="/t/classgover/inputresult/{{item.course_sn}}">修改</a></div>
+                        </span>
+
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        </div>
+    </body>
+</html>

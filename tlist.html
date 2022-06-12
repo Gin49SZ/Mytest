@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>成绩单</title>
+        <link href="/styles.css" rel="stylesheet" />
+    </head>
+    <body>        
+        <h3> 您好, 
+            {% for i in user %}
+            {{ i.tn }}
+            {% endfor %}
+            老师
+        </h3>
+
+        <div class="btn">
+        <form action="/tlogout" method="post">
+            <input type="submit" value="登出">
+        </form>
+        </div>
+
+        <div class="paper">
+        <span>
+            <div class="btn"><a href="/t/classgover">班级管理</a>  
+            </div>
+        </span>
+
+        
+        <table>
+            <tr>
+                <th>姓名</th>
+                <th>学号</th>
+                <th>班级</th>
+                <th>课程</th>
+                <th>成绩</th>            
+            </tr>           
+            {% for item in items %}
+            {% if item.grade != None %}
+            <tr>
+                <td>{{ item.student_name }}</td>
+                <td>{{ item.student_no }}</td>
+                <td>{{ item.student_class }}</td>
+                <td>{{ item.course_name }}</td>
+                <td>{{ item.grade }}</td>                
+                <td>
+                    <span>
+                        <div class="btn">
+                        <a href="/t/edit/{{item.stu_sn}}/{{item.cou_sn}}">
+                            修改
+                        </a>
+                        </div>
+                    </span>
+                </td>
+                <td>
+                    <span>
+                    <div class="btn" style="margin-top:12px;margin-bottom:5px;">
+                    <form
+                            action="/t/action/cancelgrade/{{item.stu_sn}}/{{item.cou_sn}}"
+                            method="post"
+                        >
+                            <input type="submit" value="取消成绩" />
+                    </form>
+                    </div>
+                    </span>
+                </td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </table>
+        </div>
+    </body>
+</html>
