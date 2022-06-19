@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>成绩单</title>
+        <link href="/allstyles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="paper" style="margin-top:6.5em">
+        <span>
+            <div class="btn"><a href="/t/courselect">返回查询</a>  
+            </div>
+        </span>
+        <table>
+            <tr>
+                <th>姓名</th>
+                <th>学号</th>
+                <th>成绩</th>
+            </tr>
+            {% for item in items %}
+            {% if item.grade != None %}
+            <tr>
+                <td>{{ item.stu_name }}</td>
+                <td>{{ item.stu_no }}</td>
+                <td>{{ item.grade }}</td>
+                </tr>
+            </tr>
+            {%  endif %}
+            {% endfor %}
+        </table>
+    </div>
+    </body>
+</html>

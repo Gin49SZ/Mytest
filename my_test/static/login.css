@@ -1,0 +1,150 @@
+
+/* 主体样式 */
+body{
+    height: 30em;
+    width: 20em;
+    margin: auto;
+    margin-top: 8em;
+
+    box-shadow: 4px 5px 4px 2px #aaa;
+    padding: 2em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius:25px;
+}
+
+br{
+    padding: 50px;
+    border: 1px solid black;
+  }
+
+.imgt{
+    width: 10em;
+    height: 70em;
+    background-size: 88%;
+    background-image:url("t.jpg");
+    margin: auto;
+
+}
+.imgs{
+    width: 10em;
+    height: 70em;
+    background-size: 93%;
+    background-image:url("s.jpg");
+    margin: auto;
+
+}
+
+
+
+
+
+
+.btn > form > input[type="text"]{
+    outline-style: none ;
+    border: 1px solid #ccc; 
+    border-radius: 3px;
+    padding: 7px 7px;
+    width: 230px;
+    font-size: 14px;
+    }
+    .btn > form > input[type="password"]{
+    outline-style: none ;
+    border: 1px solid #ccc; 
+    border-radius: 3px;
+    padding: 7px 7px;
+    width: 230px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    }
+
+.btn{
+    margin-bottom:10px;
+    display: inline-block;
+}
+
+
+
+.button span a{
+    color: unset;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #4878e4;
+  border: none;
+  color: #FFFFFF;
+  font-size: 15px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px 80px;
+  text-align: center;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button:hover span {
+  padding-right: 25px;
+}
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+
+.btn > form > div > input[type="submit"] {
+  background-color: unset;
+  border: unset;
+
+
+
+
+
+  display: inline-block;
+  padding: 0.5em 0.8em;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;   
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4878e4;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px #27496d;
+  margin: 50px 130px;
+}
+
+.btn > form > div > input[type="submit"]:hover {background-color: #444dca}
+
+.btn > form > div > input[type="submit"]:active {
+  background-color: #4d42df;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

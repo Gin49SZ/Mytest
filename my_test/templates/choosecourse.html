@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>成绩单</title>
+        <link href="/allstyles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="paper" style="margin-top:6.5em">
+        <span>
+            <div class="btn"><a href="/">主菜单</a>  
+            </div>
+        </span>
+        <table>
+            <tr>
+                <th>课程名</th>
+                <th>课程号</th>
+                <th>授课教师</th>
+                <th>课程时间</th>
+                <th>地点</th>
+                <th>学分</th>
+            </tr>
+            {% for item in items %}
+            {% if item.course_name !=None %}
+            <tr>
+                <td>{{ item.course_name }}</td>
+                <td>{{ item.course_no }}</td>
+                <td>{{ item.teacher_name }}</td>
+                <td>{{ item.time }}</td>
+                <td>{{ item.loc }}</td>
+                <td>{{ item.course_credit }}</td>
+                <td>
+                    <span>
+                        <div class="btn">
+                        <form
+                            action="/action/choosecourse/addmycourse/{{item.course_no}}"
+                            method="post"
+                        >
+                            <input type="submit" value="添加此课程" />
+                        </form>
+                        </div>
+                    </span>
+                </td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </table>
+        </div>
+    </body>
+</html>

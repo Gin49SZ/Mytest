@@ -1,0 +1,74 @@
+
+/* table {
+    border-collapse: collapse;
+}
+table,th,td {
+    border: 1px solid black;
+    min-width: 5em;
+} */
+/* 表格css */
+.paper {
+    width: 85vw;
+    box-shadow: 4px 5px 4px 2px #aaa;
+    padding: 2em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* 按钮和input的css */
+.btn > a {
+    color: unset;
+    text-decoration: none;
+
+    background-color: #4878e4;
+    color: #fff;
+    margin: 5px 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 0.1em 0.5em;
+}
+.btn > form > input[type="submit"] {
+    background-color: unset;
+    border: unset;
+    font-size: 1em;
+
+    cursor: pointer;
+
+    background-color: #4878e4;
+    color: #fff;
+    margin: 2px 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 0.1em 0.5em;
+}
+.btn{
+    margin-bottom:10px;
+    display: inline-block;
+}
+/* 表格>行>单元格css 此块运用到多处谨慎修改*/
+table {
+    border-collapse: collapse;
+}
+table,th,td {
+    min-width: 5em;
+}
+tr {
+    line-height: 2;
+}
+tr:nth-child(even) {
+    background-color: #fff;
+}
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+tr:first-child {
+    background-color: #444;
+    color: #fff;
+    line-height: 2.5;
+}
+tr:hover:not(:first-child) {
+    background-color: hsl(60 100% 85%);
+}

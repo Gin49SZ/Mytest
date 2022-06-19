@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>成绩单</title>
+        <link href="/allstyles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="paper" style="margin-top:6.5em">
+        <span>
+            <div class="btn"><a href="/t">返回主页</a>  
+            </div>
+        </span>
+        <table>
+            <tr>
+                <th>姓名</th>
+                <th>学号</th>
+                <th>录入成绩</th>
+            </tr>
+            {% for item in items %}
+            {% if item.grade == None %}
+            <tr>
+                <td>{{ item.student_name }}</td>
+                <td>{{ item.student_no }}</td>
+                <td>
+                    
+                    <span>
+                    <div class="btn">
+                    <form action="/t/action/entering/{{item.stu_sn}}/{{item.cou_sn}}" method="post">
+
+                        <input type="text" name="grade" value="{{grade}}">
+                        <input type="submit" value="提交">
+                    </form>
+                    </div>
+                    </span> 
+                </td>
+                <td>
+                    <span>
+                        <div class="btn">
+                        <form action="/t/action/deletestu/{{item.stu_sn}}/{{item.cou_sn}}" method="post">
+                            <input type="submit" value="删除" />
+                        </form>
+                        </div>
+                    </span>
+                </td>
+                </tr>
+            </tr>
+            {%  endif %}
+            {% endfor %}
+        </table>
+    </div>
+    </body>
+</html>
